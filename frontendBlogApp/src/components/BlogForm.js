@@ -7,6 +7,10 @@ import { Form, Input, Button } from 'reactstrap'
 
 const BlogForm = (props) => {
 
+	const buttonSize = {
+		width: '80px'
+	}
+
 	const newTitle = useField('text')
 	const newAuthor = useField('text')
 	const newUrl = useField('text')
@@ -37,9 +41,9 @@ const BlogForm = (props) => {
 		<>
 			<Form onSubmit={submitBlog}>
 				<Input className="m-2" {...newTitle} placeholder="title" reset={null} />
-				<Input  className="m-2" {...newAuthor} placeholder="author" reset={null} />
+				<Input className="m-2" {...newAuthor} placeholder="author" reset={null} />
 				<Input className="m-2" {...newUrl} placeholder="URL" reset={null} />
-				<Button className="m-2" color="success" type="submit">Submit</Button>
+				<Button style={buttonSize} className="m-2" color="success" type="submit">Submit</Button>
 			</Form>
 		</>
 	)

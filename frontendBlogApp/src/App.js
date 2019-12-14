@@ -2,12 +2,15 @@ import React from 'react'
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+//reducers
 import { initializeBlogs } from './reducers/blogReducer'
 import { setMessage } from './reducers/notificationReducer'
 import { initializeUsers } from './reducers/usersReducer'
 import { login, fetchUser } from './reducers/userReducer'
 import { useField } from './hooks/usefield'
-import { Container, Row, Col, Card, CardHeader, CardText } from 'reactstrap'
+//reactstrap
+import { Container, Card, CardHeader, CardText } from 'reactstrap'
+//components
 import Menu from './components/Menu'
 import Blog from './components/Blog'
 import Blogs from './components/Blogs'
@@ -19,6 +22,7 @@ import User from './components/User'
 
 const App = (props) => {
 
+	document.body.style = 'background: #20B2AA;'
 	const username = useField('text')
 	const password = useField('password')
 
@@ -97,6 +101,13 @@ const App = (props) => {
 	const userById = (id) =>
 		props.users.find(user => user.id === id)
 
+	//Styles
+	const headerStyle = {
+		backGround: 'black',
+		fontSize: '1.8em',
+		fontWeight: '600'
+	}
+
 
 	return (
 		<Container>
@@ -105,7 +116,7 @@ const App = (props) => {
 					<Router>
 						<Menu />
 						<Card body className="text-center">
-							<CardHeader>BlogApp</CardHeader>
+							<CardHeader style={headerStyle}>BlogApp</CardHeader>
 							<Notifications />
 							<CardText>
 								<Route exact path='/' render={() =>

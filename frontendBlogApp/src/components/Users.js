@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 const Users = (props) => {
 	return (
 		<div>
-			<h1>users</h1>
-			<h2>Create</h2>
+			<h1>Users</h1>
 			{
 				props.users.map(user =>
 					<li key={user.id}>

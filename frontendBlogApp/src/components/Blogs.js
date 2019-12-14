@@ -15,7 +15,7 @@ const Blogs = ({ blogs }) => {
 		<ListGroup>
 			{blogs.map(blog =>
 				<Link key={blog.id} to={`blogs/${blog.id}`}>
-					<ListGroupItem>{blog.title} ({blog.author}</ListGroupItem>
+					<ListGroupItem>{blog.title} {blog.author}</ListGroupItem>
 				</Link>
 			)}
 		</ListGroup>
